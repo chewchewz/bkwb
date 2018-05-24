@@ -30,6 +30,24 @@ class UsersController < ApplicationController
     redirect_to users_path
   end
 
+  def articles?
+    return @user.articles.count
+  end
+
+  def last_article
+    if articles?
+      return @user.articles.order(:created_at).last
+    else 
+      return false
+    end
+  end
+
+  def comments?
+    return @user.comments.count
+  end
+
+  helper_method :articles?, :last_article
+  helper_method :comments?
 
   private
 

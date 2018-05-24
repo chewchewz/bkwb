@@ -1,11 +1,32 @@
+<div class="container-fluid">
+<center>
 <p>
-	<strong>User</strong>
+	<h2>User</h2>
 	<%= @user.name %>
 </p>
 
 <p>
-	<strong>Email</strong>
+	<h2>Email</h2>
 	<%= @user.email %>
+</p>
+
+<p> 
+  <h2>Articles</h2>
+  <%= articles? %>
+</p>
+
+<p>
+  <h2>Most recent article</h2>
+  <% if last_article -%>
+    <%= link_to "#{last_article.title}", article_path(last_article) %>
+  <% else -%>
+    <%= "N/A" %>
+  <% end %>
+</p>
+
+<p>
+  <h2>Comments</h2>
+  <%= comments? %>
 </p>
 
 <%= link_to 'Edit', edit_user_path(@user) %>
@@ -13,3 +34,5 @@
 		method: :delete,
 		data: { confirm: 'R u sure?' } %>
 <%= link_to 'Return', { controller: :users, action: 'index' } %>
+</center>
+</div>

@@ -1,9 +1,8 @@
 <div class="container-fluid">
-  <h2>Users Table</h2>
   <table class="table">
     <thead>
       <tr>
-        <th>User</th>
+        <th><h2>User</h2></th>
         <th>Email</th>
       </tr>
     </thead>
@@ -12,6 +11,7 @@
       <tr>
         <td><%= user.name %></td>
         <td><%= user.email %></td>
+        <td><%= link_to 'Show', user_path(user) %></td>
       </tr>
       <% end %>
     </tbody>
