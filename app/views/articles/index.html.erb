@@ -3,24 +3,24 @@
   <table class="table">
     <thead>
       <tr>
-  		  <th>Title</th>
-  		  <th>Summary</th>
-  		  <th>Comments</th>
-  	  </tr>
+        <th>Title</th>
+        <th>Summary</th>
+        <th>Comments</th>
+      </tr>
     </thead>
     <tbody>
-  	<% @articles.each do |article| %>
-  		<tr>
-  			<td><%= article.title %></td>
-  			<td><%= article.summary %></td>
-    		<td><%= article.comments.count %></td>
-  			<td><%= link_to 'Show', article_path(article) %></td>
+    <% @articles.each do |article| %>
+      <tr>
+        <td><%= article.title %></td>
+        <td><%= article.summary %></td>
+        <td><%= article.comments.count %></td>
+        <td><%= link_to 'Show', article_path(article) %></td>
         <td><%= link_to 'Edit', edit_article_path(article) %></td>
-  			<td><%= link_to 'Delete', article_path(article),
-							method: :delete,
-							data: { confirm: 'R u sure m8?' } %></td>
-  		</tr>
-  	<% end %>
+        <td><%= link_to 'Delete', article_path(article),
+              method: :delete,
+              data: { confirm: 'R u sure m8?' } %></td>
+      </tr>
+    <% end %>
     </tbody>
   </table>
   <%= link_to 'New Article', new_article_path %>

@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   before_action :find_user, only: [:show, :destroy]
   before_action :user_params, only: [:create]
 
-	def new
+  def new
     @user = User.new
   end
 
@@ -20,7 +20,7 @@ class UsersController < ApplicationController
     if @user.save
       redirect_to @user
     else
-    	render 'show'
+      render 'show'
     end
   end
 

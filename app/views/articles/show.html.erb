@@ -1,11 +1,11 @@
 <div class="container-fluid">
   <center>
     <p>
-    	<h2><%= @article.title %></h2>
+      <h2><%= @article.title %></h2>
     </p>
 
     <p>
-    	<%= @article.text %>
+      <%= @article.text %>
     </p>
 
     <h3>Comments</h3>
@@ -16,8 +16,8 @@
 
     <%= link_to 'Edit', edit_article_path(@article) %>
     <%= link_to 'Delete', article_path,
-    		method: :delete,
-    		data: { confirm: 'R u sure?' } %>
+        method: :delete,
+        data: { confirm: 'R u sure?' } %>
     <%= link_to 'Return', { controller: :articles, action: 'index' } %>
   </center>
 </div>

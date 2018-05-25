@@ -2,7 +2,7 @@ class ArticlesController < ApplicationController
 
   before_action :find_user, only: [:create,:update]
 
-	def new
+  def new
     @article = Article.new
   end
 
@@ -24,26 +24,25 @@ class ArticlesController < ApplicationController
     if @article.save
       redirect_to @article
     else
-    	render 'new'
+      render 'new'
     end
   end
   
   def update
-  	@article = Article.find(params[:id])
-		
-		if @article.update(article_params)
-			redirect_to @article
-		else
-			render 'edit'
-		end
+    @article = Article.find(params[:id])
+    if @article.update(article_params)
+      redirect_to @article
+    else
+      render 'edit'
+    end
   end
 
   def destroy
-		@article = Article.find(params[:id])
-		@article.destroy 
+    @article = Article.find(params[:id])
+    @article.destroy 
 
-		redirect_to articles_path
-	end
+    redirect_to articles_path
+  end
 
   private
    
@@ -51,8 +50,8 @@ class ArticlesController < ApplicationController
       @user = User.find(params[:article][:user_id])
     end
 
- 	  def article_params
-  	  params.require(:article).permit(:title,:summary,:text,:user_id)
-	  end
+    def article_params
+      params.require(:article).permit(:title,:summary,:text,:user_id)
+    end
 
 end
