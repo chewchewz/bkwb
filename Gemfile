@@ -5,6 +5,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+BK_GEMFILE = __FILE__ unless defined? FOREMAN_GEMFILE
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.1'
@@ -54,3 +55,7 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+Dir["#{File.dirname(BK_GEMFILE)}/bundler.d/*.rb"].each do |bundle|
+  self.instance_eval(Bundler.read_file(bundle))
+end

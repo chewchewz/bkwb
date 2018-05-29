@@ -13,4 +13,11 @@ module Blog
     # -- all .rb files in that directory are automatically loaded.
     config.web_console.whitelisted_ips = '10.0.2.2'
   end
+
+  def self.setup_console
+    ENV['IRBRC'] = File.join(Rails.root,"/config/.irbrc")
+    load(ENV['IRBRC'])
+  end
 end
+
+Blog.setup_console
