@@ -29,10 +29,12 @@
   <%= comments? %>
 </p>
 
-<%= link_to 'Edit', edit_user_path(@user) %>
-<%= link_to 'Delete', user_path,
-    method: :delete,
-    data: { confirm: 'R u sure?' } %>
-<%= link_to 'Return', { controller: :users, action: 'index' } %>
-</center>
+<div class="btn-group">
+  <%= link_to 'Edit', edit_user_path(@user), class: "btn btn-default" %>
+  <%= link_to 'Delete', user_path,  
+      method: :delete,
+      data: { confirm: 'R u sure?' }, class: "btn btn-default" %>
+  <%= link_to 'Return', { controller: :users, action: 'index' }, class: "btn btn-primary" %>
+</div>
+  </center>
 </div>

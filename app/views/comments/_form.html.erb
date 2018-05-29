@@ -1,15 +1,14 @@
 <%= form_with(model: [ @article, @article.comments.build ], local: true) do |form| %>
   <p>
     <%= form.label :commenter %>
-    <%= form.collection_select :user_id, User.all, :id, :name %>
+    <%= form.collection_select :user_id, User.all, :id, :name, class: "dropdown-menu" %>
   </p>
   
   <p>
-    <%= form.label :body %>
-    <%= form.text_field :body %>
+    <%= form.text_area :body, :cols => "100", :rows => "10" %>
   </p>
 
   <p>
-    <%= form.submit %>
+    <%= form.submit 'Submit', class: "btn btn-default btn-primary" %>
   </p>
 <% end %>

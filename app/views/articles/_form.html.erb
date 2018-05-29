@@ -21,21 +21,21 @@
 
   <p>
     <%= form.label :title %><br>
-    <%= form.text_field :title %>
+    <%= form.text_field :title, class: "form-control" %>
   </p>
 
   <p>
     <%= form.label :summary %><br>
-    <%= form.text_field :summary %>
+    <%= form.text_field :summary, class: "form-control" %>
   </p>
  
   <p>
     <%= form.label :text %><br>
-    <%= form.text_area :text %>
+    <%= form.text_area :text, class: "form-control" %>
   </p>
  
   <p>
-    <%= form.submit %>
+    <%= form.submit 'Submit', class: "btn btn-default btn-primary" %>
   </p>
  
 <% end %>
