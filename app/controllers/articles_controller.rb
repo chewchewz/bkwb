@@ -1,6 +1,7 @@
 class ArticlesController < ApplicationController
 
-  before_action :find_user, only: [:update,:show,:edit,:destroy]
+  #before_action :find_user, only: [:update,:show,:edit,:destroy]
+  before_action :find_article, only: [:update, :show, :edit, :destroy]
 
   def new
     @article = Article.new
@@ -42,6 +43,10 @@ class ArticlesController < ApplicationController
    
     def find_user
       @user = User.find(params[:article][:user_id])
+    end
+
+    def find_article
+      @article = Article.find(params[:id])
     end
 
     def article_params

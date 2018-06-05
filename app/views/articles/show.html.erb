@@ -14,10 +14,10 @@
     <h5>Add a comment</h5>
     <%= render 'comments/form' %>
 
-    <%= link_to 'Edit', edit_article_path(@article) %>
+    <%= link_to 'Edit', edit_article_path(@article), class: "btn btn-default" %>
     <%= link_to 'Delete', article_path,
         method: :delete,
-        data: { confirm: 'R u sure?' } %>
-    <%= link_to 'Return', { controller: :articles, action: 'index' } %>
+        data: { confirm: 'R u sure?' }, class: "btn btn-danger" %>
+    <%= link_to 'Return', { controller: :articles, action: 'index' }, class: "btn btn-default" %>
   </center>
 </div>

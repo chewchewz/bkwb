@@ -12,13 +12,13 @@
 
 <p> 
   <h2>Articles</h2>
-  <%= articles? %>
+  <%= articles?(@user) %>
 </p>
 
 <p>
   <h2>Most recent article</h2>
-  <% if last_article -%>
-    <%= link_to "#{last_article.title}", article_path(last_article) %>
+  <% if last_article(@user) -%>
+    <%= link_to "#{last_article(@user).title}", article_path(last_article(@user)) %>
   <% else -%>
     <%= "N/A" %>
   <% end %>
@@ -26,7 +26,7 @@
 
 <p>
   <h2>Comments</h2>
-  <%= comments? %>
+  <%= comments?(@user) %>
 </p>
 
 <div class="btn-group">
