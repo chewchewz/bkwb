@@ -35,7 +35,28 @@
   </p>
  
   <p>
+    <%= form.label :address %><br>
+    <%= form.text_area :address, class: "form-control" %>
+  </p>
+
+  <p>
+    <%= form.label :whoppers %><br>
+		<div class="field">
+			<div id="star-rating"></div>
+			<%= form.label :whoppers %>
+			<%= form.text_field :whoppers %>
+		</div>
+  </p>
+
+  <p>
     <%= form.submit 'Submit', class: "btn btn-default btn-primary" %>
   </p>
  
 <% end %>
+
+<script>
+	$('.star-rating').raty({
+		score: '0',
+		path: '/assets'
+	});
+</script>

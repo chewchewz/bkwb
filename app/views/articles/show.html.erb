@@ -11,6 +11,19 @@
     <h3>Comments</h3>
     <%= render @article.comments %>
  
+    <h3>Whoppers</h3>
+		<td><div class="star" data-score=<%= @article.whoppers.to_i %>></div></td>
+
+		<h3>Location</h3>
+		<td>
+		<iframe
+		  width="600"
+		  height="450"
+		  frameborder="0" style="border:0"
+	  	src="https://www.google.com/maps/embed/v1/place?key=<%= Rails.application.secrets.MAPS_KEY %>&q=burger+king+near+<%= @article.address.split(" ").join("+") %>" allowfullscreen>
+		</iframe>
+		</td>
+
     <h5>Add a comment</h5>
     <%= render 'comments/form' %>
 
@@ -21,3 +34,12 @@
     <%= link_to 'Return', { controller: :articles, action: 'index' }, class: "btn btn-default" %>
   </center>
 </div>
+
+<script>
+	$('.star').raty({
+		starOff: 'burger-empty.png',
+		starOn: 'burger-full.png',
+		readOnly: true,
+		path: '/assets'
+	});
+</script>
