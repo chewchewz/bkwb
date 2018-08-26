@@ -8,13 +8,15 @@
   </head>
 
   <body>
-    <div class="container-fluid">
-    	<nav class="nav nav-pills nav-fill nav-justified" id="topbar">
-        <%= link_to image_tag("logos/bk_mini.png"), root_path %>
-        <%= link_to "Articles", '/articles', class: "nav-item nav-link active" %>
-        <%= link_to "Users", '/users', class: "nav-item nav-link" %>
-        <%= link_to "My Local", '/localbk', class: "nav-item nav-link" %>
-    	</nav>
+		<div class="nav navbar">
+      <div class="container-fluid">
+	    	<ul class="nav nav-pills navbar-fixed-top">
+  	      <li><%= link_to image_tag("logos/bk_mini.png"), root_path %></li>
+	        <li><%= link_to "Articles", '/articles' %></li>
+	        <li><%= link_to "Users", '/users' %></li>
+	        <li><%= link_to "My Local", '/localbk' %></li>
+	    	</ul>
+			</div>
     </div>
     <div class="container-fluid container-pf-nav-pf-vertical nav-pf-persistent-secondary" id="main">
       <div class="row">

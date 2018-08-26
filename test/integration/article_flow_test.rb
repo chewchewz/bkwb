@@ -14,7 +14,7 @@ class ArticleFlowTest < ActionDispatch::IntegrationTest
     assert_response :success
     user = User.all.first
 
-    post "/articles", params: { article: { title: "can create", body: "article successfully.", user_id: user.id.to_i, summary: "a decent summary" } }
+    post "/articles", params: { article: { title: "can create", body: "article successfully.", user_id: user.id.to_i, whoppers: '4.0', summary: "a decent summary" } }
     assert_response :redirect
     follow_redirect!
     assert_response :success

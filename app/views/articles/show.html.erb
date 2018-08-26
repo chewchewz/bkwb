@@ -16,12 +16,14 @@
 
 		<h3>Location</h3>
 		<td>
+		<% if @article.address %>
 		<iframe
 		  width="600"
 		  height="450"
 		  frameborder="0" style="border:0"
 	  	src="https://www.google.com/maps/embed/v1/place?key=<%= Rails.application.secrets.MAPS_KEY %>&q=burger+king+near+<%= @article.address.split(" ").join("+") %>" allowfullscreen>
 		</iframe>
+		<% end %>
 		</td>
 
     <h5>Add a comment</h5>
