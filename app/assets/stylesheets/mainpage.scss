@@ -2,11 +2,16 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@font-face {
+  font-family: 'InsaniBurger';
+  src: url('Insanibu.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+   url('Insanibu.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
+}  
+
 .main-title {
   border: 1px solid black;
 	padding-top: 30px;
 	padding-bottom: 30px;
-	font-family: sans-serif;
 	font-weight: bold;
 	background: {
 		color: white;
@@ -17,10 +22,13 @@
 	list-style: none;
 	display: flex;
 	align-items: center;
-	padding-bottom: 70px;
+	background-color: white;
+	font-family: 'Insaniburger';
 	font-family: Helvetica Neue;
 }
 .nav li {
 	display: inline-block;
+	font-size: 1.5em;
 	vertical-align: middle;
+	font-family: 'Insaniburger';
 }
